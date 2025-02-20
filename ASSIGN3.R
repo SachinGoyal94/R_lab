@@ -18,7 +18,7 @@ cat(P_X,"\n")
 #Q4 hypergeometric
 n<-250
 sample<-17
-def<-5
+def<-5  
 s<-3
 cat(((choose(17,3))*(choose(233,2)))/choose(250,5))
 
