@@ -1,0 +1,107 @@
+# ##datatypes
+# numeric<- -11.36
+# integer<-  11L
+# complex<-3+6i
+# logical= TRUE
+# character="a 10 lines code"
+# char<-"a"
+# class(char)
+# typeof(char)
+
+# ##conversion of datatypes
+# numeric<-as.integer(numeric)
+# print(numeric)
+# ## baki jagah bhi bas as.datatype krdo
+
+# print(12%%6) ##remainder
+# print(12%/%6) ##quotient 
+# ##applicable on vector also
+
+# arr<-c(1,2,3,4,5)
+# if(50 %in% arr)
+#     {
+#     cat("go ahead")
+#     }else if(40 %in% arr)
+#     {
+#     cat("40 ")
+#     }else{
+#     cat("nothing")
+#     }
+
+# ##switch
+#     x<-switch(3,
+#              "Sachin",
+#              "Harry",
+#              "Prady",
+#              "ICE")
+# cat(x)
+# k="8"
+# y<-switch(k,
+#          "8"="Sachin",
+#          "20"="Harry",
+#          "100"="Prady",
+#          "400"="ICE")
+# cat(y)
+
+# for(i in 1:4)
+#     {
+#     cat("for loop","\n")
+#     }
+# for(g in arr)
+#     {
+#     cat("again for loop","\n")
+#     }
+
+# check=1
+# while(check<=5)
+#     {
+#     cat(arr[check],"\n")
+#     check=1+check
+#     }
+
+
+# a1<-c(0:10,40)
+# cat(sum(a1),"\n")
+# cat(a1)
+
+# v<-c(1:10)
+# plot(v)
+
+
+# plot(v, type = "l")
+
+# plot(v, type = "o", col = "red", xlab = "Month", ylab = "Temperature")
+
+# v <- c(13, 22, 28, 7, 31)
+# w <- c(11, 13, 32, 6, 35)
+# x <- c(12, 22, 15, 34, 35)
+
+# plot(v, type = "o", col = "green", xlab = "Month", ylab = "Temperature")
+
+# lines(w, type = "o", col = "red")
+# lines(x, type = "o", col = "blue")
+
+x <- c(12, 35, 56, 75)
+labels <- c("India", "UK", "JAPAN", "USA")
+
+# pie(x, labels)
+
+# pie(x, labels, main="Country Pie chart", col=rainbow(length(x)))
+
+# colors <- c("blue", "green", "red", "orange")
+# pie(x, labels, main="Country Pie chart", col=colors)
+#boxplot
+# Sample data
+x <- c(10, 20, 15, 30, 25, 35, 40, 10, 50, 45)
+
+# Create a simple boxplot
+boxplot(x, 
+        main = "Simple Boxplot", 
+        ylab = "Values", 
+        col = "skyblue", 
+        border = "black")
+
+#histogram
+hist(x, xlab = "x", ylab = "y",main="histogram",xlim=c(0,100),ylim=c(0,2),breaks=4,col=rainbow(length(x)))
+x <- c(12, 35, 56, 75)
+barplot(x,names.arg=labels,xlab = "x", ylab = "y",main="bar graph",col=rainbow(length(x)),border="black")
