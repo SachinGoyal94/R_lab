@@ -55,5 +55,3 @@ n_threshold <- min(n_values[probabilities > 0.5])
 cat("The smallest number of n for which the probability of a shared birthday exceeds 0.5 is:", n_threshold, "\n")
 
 
-\
-
