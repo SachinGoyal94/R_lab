@@ -1,0 +1,58 @@
+install.packages("pracma") 
+library(pracma) 
+f <- function(x, y) { 
+return(2 * (2 * x + 3 * y) / 5) 
+} 
+result <- integral2(f, 0, 1, 0, 1) 
+print(result) 
+
+g_x_1 <- function(y) f(1,y) 
+result2 <- integral(g_x_1 , xmin = 0 ,xmax=1) 
+result2 
+
+h_y_0 <- function(x) f(x,0) 
+result3 <- integral(h_y_0 , xmin=0,xmax=1) 
+result3 
+
+f2 <- function(x,y){ 
+return(x*y*f(x,y)) 
+} 
+result4 <- integral2(f2 , 0 ,1 ,0,1) 
+result4
+
+
+
+
+#Q2
+
+f <- function(x,y){ 
+return((x + y)/30) 
+} 
+A <- matrix(c(f(0,0:2) , f(1,0:2) , f(2,0:2) , f(3,0:2)),nrow=4,ncol=3,byrow = TRUE) 
+A 
+sum(A) 
+
+gx <- apply(A,1,sum) 
+gx 
+
+hy <- apply(A,2,sum) 
+hy 
+
+result <- A[1,2]/hy[2] 
+result 
+
+# (iv) Expected values
+x_vals <- 0:3
+y_vals <- 0:2
+EX <- sum(x_vals * gx)
+EY <- sum(y_vals * hy)
+
+
+# (v) Variances
+VarX <- sum(x_vals^2 * gx) - EX^2
+VarY <- sum(y_vals^2 * hy) - EY^2
+
+#(vi)
+EXY<-sum(outer(x,y)*A)
+CovXY <- EXY - EX * EY
+CorrXY <- CovXY / sqrt(VarX * VarY)
